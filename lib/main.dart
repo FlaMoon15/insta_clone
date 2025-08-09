@@ -48,7 +48,7 @@ class _InstaCloneHomeState extends State<InstaCloneHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: bottomNavigationBarItemIndex == 0 ? AppBar(
         title: Text(
           'Instagram',
           style: GoogleFonts.lobsterTwo(color: Colors.black, fontSize: 32),
@@ -68,7 +68,7 @@ class _InstaCloneHomeState extends State<InstaCloneHome> {
             },
           ),
         ],
-      ),
+      ) : null,
       body: InstaBody(bottomNavigationBarItemIndex: bottomNavigationBarItemIndex),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (newBottomNavigationBarItemIndex) => setState(() => bottomNavigationBarItemIndex = newBottomNavigationBarItemIndex),
